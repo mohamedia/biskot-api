@@ -3,7 +3,19 @@ package com.biskot.domain.model;
 import java.io.Serializable;
 
 public class Item implements Serializable {
-    // TODO: to be implemented
+
+    public Item(int productId) {
+        this.productId = productId;
+    }
+
+    public Item() {
+    }
+
+    public Item(int productId, int quantity, Double unitPrice) {
+        this.productId = productId;
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
+    }
 
     private int productId;
 

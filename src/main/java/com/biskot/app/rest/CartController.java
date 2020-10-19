@@ -1,5 +1,6 @@
 package com.biskot.app.rest;
 
+import com.biskot.app.rest.request.AddItemRequest;
 import com.biskot.domain.model.Cart;
 import com.biskot.domain.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +10,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController
 @RequestMapping("/")
 public class CartController {
-    // TODO: to be implemented
 
     private CartService cartService;
 

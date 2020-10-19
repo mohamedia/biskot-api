@@ -1,4 +1,4 @@
-package com.biskot.app.rest;
+package com.biskot.app.rest.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -11,6 +11,14 @@ public class AddItemRequest implements Serializable {
 
     private int quantity;
 
+    public AddItemRequest() {
+
+    }
+    public AddItemRequest(long productId, int quantity) {
+        this.productId = productId;
+        this.quantity = quantity;
+    }
+
     public long getProductId() {
         return productId;
     }
@@ -22,4 +30,6 @@ public class AddItemRequest implements Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+
 }

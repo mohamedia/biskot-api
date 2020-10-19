@@ -1,5 +1,6 @@
 package com.biskot.app.rest;
 
+import com.biskot.app.rest.request.AddItemRequest;
 import com.biskot.domain.model.Cart;
 import com.biskot.domain.service.CartService;
 import org.junit.jupiter.api.Test;
@@ -58,12 +59,13 @@ class CartControllerTest {
         long cartId = 3;
         long productId = 1;
         int quantityToAdd = 5;
+        AddItemRequest addItemRequest = new AddItemRequest(productId, quantityToAdd);
         //When
-        ResponseEntity responseEntity = cartController.retrieveCart(cartId);
+        ResponseEntity responseEntity = cartController.addOrUpdateItem(cartId, addItemRequest);
 
         //Then
-        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
         Mockito.verify(cartService).addItemToCart(cartId, productId, quantityToAdd);
+        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
 
     }
 
